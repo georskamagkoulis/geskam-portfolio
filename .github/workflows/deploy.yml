@@ -39,7 +39,7 @@ jobs:
           cp *.html sitemap.xml robots.txt _site/
           cp -r css js assets _site/
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
