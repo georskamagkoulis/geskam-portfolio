@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="el">
+<head>
+{{> head}}
+  <meta name="robots" content="noindex">
+  <title>Δεν βρέθηκε η σελίδα · {{person.name}}</title>
+</head>
+<body>
+{{> header}}
+  <main id="main" class="section">
+    <div class="wrap narrow">
+      <p class="eyebrow">Σφάλμα 404</p>
+      <h1 class="page-title">Αυτή η σελίδα δεν υπάρχει.</h1>
+      <p class="lead">Ίσως άλλαξε διεύθυνση. Ξεκίνα από την αρχική.</p>
+      <p class="actions"><a class="btn btn--primary" href="{{website.path}}">Στην αρχική</a></p>
+    </div>
+  </main>
+{{> footer}}
+</body>
+</html>

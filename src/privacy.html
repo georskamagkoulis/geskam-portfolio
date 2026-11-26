@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="el">
+<head>
+{{> head}}
+  <title>Απόρρητο · {{person.name}}</title>
+  <meta name="description" content="Πώς χειρίζεται αυτό το site τα δεδομένα σου: χωρίς cookies, χωρίς φόρμες.">
+  <meta property="og:title" content="Απόρρητο · {{person.name}}">
+  <meta property="og:description" content="Χωρίς cookies, χωρίς φόρμες.">
+</head>
+<body>
+{{> header}}
+
+  <main id="main" class="section">
+    <div class="wrap narrow prose">
+      <p class="eyebrow">Απόρρητο</p>
+      <h1 class="page-title">Τα δεδομένα σου</h1>
+      <p class="lead">Με λίγα λόγια: αυτό το site δεν χρησιμοποιεί cookies, δεν έχει φόρμες και δεν αποθηκεύει τίποτα στη συσκευή σου.</p>
+
+      <h2>Μέτρηση επισκεψιμότητας</h2>
+      <p>{{privacy.analytics}}</p>
+
+      <h2>Φιλοξενία</h2>
+      <p>Το site φιλοξενείται στο GitHub Pages της GitHub, Inc. Όπως κάθε server, μπορεί να καταγράφει τη διεύθυνση IP των επισκεπτών για λόγους ασφαλείας. Δες τη <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">δήλωση απορρήτου του GitHub<span class="visually-hidden"> (ανοίγει σε νέα καρτέλα)</span></a>.</p>
+
+      <h2>Όταν μου στέλνεις μήνυμα</h2>
+      <p>Αν μου γράψεις με email ή μέσω social media, χρησιμοποιώ τα στοιχεία σου μόνο για να σου απαντήσω και για τη συνεργασία μας. Δεν τα δίνω σε τρίτους.</p>
+
+      <h2>Σύνδεσμοι σε άλλα site</h2>
+      <p>Όταν πατάς σύνδεσμο προς άλλο site (π.χ. Instagram, LinkedIn ή site πελατών), ισχύουν οι δικοί τους όροι.</p>
+
+      <p class="muted">Τελευταία ενημέρωση: 26/11/2026</p>
+    </div>
+  </main>
+
+{{> footer}}
+</body>
+</html>

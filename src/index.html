@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="el">
+<head>
+{{> head}}
+  <title>{{person.name}} · {{person.role}}, {{person.city}}</title>
+  <meta name="description" content="{{person.role}} στη {{person.city}}: ιστοσελίδες που δουλεύουν σωστά στο κινητό, κρατήσεις, υπενθυμίσεις και ψηφιακοί βοηθοί. Ζήτα προσφορά.">
+  <meta property="og:title" content="{{person.name}} · {{person.role}}">
+  <meta property="og:description" content="Ιστοσελίδες, κρατήσεις, υπενθυμίσεις και ψηφιακοί βοηθοί για επιχειρήσεις στη {{person.city}}.">{{jsonld.html}}
+</head>
+<body>
+{{> header}}
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">{{person.city}}</p>
+        <h1 class="hero__title">{{person.role}}</h1>
+        <p class="lead">Οι πελάτες σου σε βρίσκουν, βλέπουν σωστό ωράριο, κλείνουν ραντεβού και παίρνουν υπενθύμιση. Εσύ ασχολείσαι με τη δουλειά σου.</p>
+        <p class="actions">
+          <a class="btn btn--primary" href="{{contact.ctaHref}}">Ζήτα προσφορά</a>
+          <a class="btn btn--ghost" href="#work">Δες τι έχω φτιάξει</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="audiences-title">
+      <div class="wrap">
+        <h2 class="section__title" id="audiences-title">Σε ποιους απευθύνομαι</h2>
+        <ul role="list" class="pills">
+{{audiences.html}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="problems-title">
+      <div class="wrap">
+        <h2 class="section__title" id="problems-title">Σου ακούγεται γνωστό;</h2>
+        <ul role="list" class="cards">
+{{problems.html}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <h2 class="section__title" id="services-title">Υπηρεσίες</h2>
+        <ul role="list" class="cards">
+{{services.html}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 class="section__title" id="work-title">Δουλειές</h2>
+        <ul role="list" class="works">
+{{work.html}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+      <div class="wrap">
+        <h2 class="section__title" id="steps-title">Πώς δουλεύουμε</h2>
+        <ol class="steps">
+{{steps.html}}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <h2 class="section__title" id="faq-title">Συχνές ερωτήσεις</h2>
+        <div class="faq">
+{{faq.html}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap narrow about">
+        {{photo.html}}
+        <div>
+          <h2 class="section__title" id="about-title">Για μένα</h2>
+{{about.html}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap narrow">
+        <h2 class="section__title" id="contact-title">Ας μιλήσουμε</h2>
+        <p class="lead">Πες μου τι χρειάζεσαι και σου στέλνω γραπτή προσφορά, χωρίς δέσμευση.</p>
+        {{contact.html}}
+      </div>
+    </section>
+  </main>
+
+{{> footer}}
+</body>
+</html>

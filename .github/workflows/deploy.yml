@@ -1,0 +1,58 @@
+# Tests the site, builds it with "npm run build" and publishes it to GitHub Pages.
+# Only the public files are published, so src/, data/, tests/ and the build scripts are not served.
+#
+# One-time setup: repo Settings → Pages → Build and deployment → Source: "GitHub Actions".
+
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:          # on PRs: test and build only
+  workflow_dispatch:     # "Run workflow" button in the Actions tab
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run the tests
+        run: npm test
+
+      - name: Build pages from src/ and data/site.json
+        run: npm run build
+
+      - name: Collect the public files
+        run: |
+          mkdir _site
+          cp *.html sitemap.xml robots.txt _site/
+          cp -r css js assets _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

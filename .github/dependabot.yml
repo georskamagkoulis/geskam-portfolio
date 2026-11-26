@@ -1,0 +1,7 @@
+# Opens a pull request once a month when the GitHub Actions used in the workflow have a newer version.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

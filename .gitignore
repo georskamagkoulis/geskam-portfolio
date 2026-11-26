@@ -1,0 +1,8 @@
+# Built by "npm run build" (and by the GitHub Action on every deploy). Edit src/ and data/ instead.
+/*.html
+/sitemap.xml
+/robots.txt
+
+node_modules/
+.DS_Store
+Thumbs.db
